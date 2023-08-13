@@ -1,5 +1,7 @@
 #![allow(unused)]
 
+use std::net::SocketAddr;
+
 use axum::Router;
 use axum::routing::get;
 use axum::response::Html;
@@ -11,5 +13,8 @@ async fn main() {
         get(|| async { Html("hello <strong>World!!!</strong>") })
     );
 
-    let addr = Sock
+    let addr = SocketAddr::from(([127, 0, 0, 1], 8080));
+    println!("->>>>>>>>>>>Listening on {addr}\n");
+
+    axum::Server::bind(&addr).serve(routes_hello.into_make_service()).await.unwrap();
 }
