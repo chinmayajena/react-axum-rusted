@@ -16,3 +16,9 @@ $ cargo watch -q -c -w src/ -x run
 $ cargo watch -q -c -w tests/ -x "test -q quick_dev -- --nocapture"
 
 ```
+
+
+### If localhost refused to connect while running the test
+
+- [Visit URL](https://locall.host/)
+- [Visit URL](https://github.com/rust-lang/cargo/issues/11544#issuecomment-1491691403)
